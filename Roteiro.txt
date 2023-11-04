@@ -1,4 +1,8 @@
 Objetivo: criar um cadastro de livros
 
-Modelo:
+Model:
     Livro: id, titulo, isbn, resenha, numero_paginas
+
+Repository:
+    Livro: obterTodos, obterPorId, adicionar, atualizar, remover
+    
