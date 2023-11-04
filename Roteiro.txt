@@ -8,3 +8,6 @@ Repository:
 
 Service:
     Livro: obterTodos, obterPorId, adicionar, atualizar, remover
+
+Controller:
+    Livro: obterTodos, obterPorId, adicionar, atualizar, remover
