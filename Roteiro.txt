@@ -1,0 +1,4 @@
+Objetivo: criar um cadastro de livros
+
+Modelo:
+    Livro: id, titulo, isbn, resenha, numero_paginas
