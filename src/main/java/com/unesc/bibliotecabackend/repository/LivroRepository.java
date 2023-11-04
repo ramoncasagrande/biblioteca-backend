@@ -1,13 +1,13 @@
 package com.unesc.bibliotecabackend.repository;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
 import com.unesc.bibliotecabackend.model.Livro;
+import com.unesc.bibliotecabackend.model.exception.ResourceNotFoundException;
 
 @Repository
 public class LivroRepository {
@@ -50,6 +50,10 @@ public class LivroRepository {
      * @param id do livro a ser removido
      */
     public void remover(Integer id){
+        Optional<Livro> livroEncontrado = obterPorId(id);
+        if (livroEncontrado.isEmpty()){
+            throw new ResourceNotFoundException("Livro não encontrado");
+        }
         livros.removeIf(livro -> livro.getId() == id);
     }
 
@@ -62,7 +66,7 @@ public class LivroRepository {
         //Pesquisar o livro a ser atualizado
         Optional<Livro> livroEncontrado = obterPorId(livro.getId());
         if (livroEncontrado.isEmpty()){
-            throw new InputMismatchException("Livro não encontrado");
+            throw new ResourceNotFoundException("Livro não encontrado");
         }
 
         //Remover livro antigo
