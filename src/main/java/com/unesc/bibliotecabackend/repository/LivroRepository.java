@@ -69,7 +69,7 @@ public class LivroRepository {
         remover(livro.getId());
 
         //Adicionar novo livro
-        adicionar(livro);
+        livros.add(livro);
 
         return livro;
     }
