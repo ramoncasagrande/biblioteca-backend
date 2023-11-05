@@ -11,3 +11,10 @@ Service:
 
 Controller:
     Livro: obterTodos, obterPorId, adicionar, atualizar, remover
+
+------------
+
+Persistir os dados no Postgres
+
+    1-conectar o banco
+    2-Persistir o modelo no banco
